@@ -12,14 +12,19 @@ int    count;
 count = 0;
 if (c == 'c')
 count += _putchar(va_arg(args, int));
-if (c == 's')
+else if (c == 's')
 count += revo_putstr(va_arg(args, char *));
-if (c == 'd')
+else if (c == 'd')
 count += tyrant_putnbr(va_arg(args, int));
-if (c == 'i')
+else if (c == 'i')
 count += tyrant_putnbr(va_arg(args, int));
-if (c == '%')
+else if (c == '%')
 count += _putchar('%');
+else
+{
+count += _putchar('%');
+count += _putchar(c);
+}
 return (count);
 }
 /**
